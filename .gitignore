@@ -7,6 +7,9 @@ env/
 # Variáveis de ambiente
 .env
 
+# Pastas de dados
+enem_2023/
+
 # Arquivos temporários do Jupyter
 .ipynb_checkpoints/
 
@@ -18,6 +21,20 @@ __pycache__/
 # Dados sensíveis ou grandes
 *.csv
 
-# Docker (caso gere volumes ou dados locais)
+# Docker
+docker-compose.yml
 docker-compose.yaml
+docker-compose.override.yaml
 *.db
+# Adicione estas linhas para Docker:
+Dockerfile*
+docker-compose*.yml
+docker-compose*.yaml
+.dockerignore
+# Volumes e dados do Docker
+volumes/
+data/
+# Imagens e containers
+*.tar
+# Logs do Docker
+docker-compose.log
