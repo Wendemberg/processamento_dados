@@ -1,0 +1,44 @@
+# Projeto ENEM 2023 – Engenharia de Dados
+
+Este projeto foi desenvolvido como parte da disciplina **Processamento de Dados** do curso de **Engenharia de Dados**. O objetivo é realizar uma análise exploratória dos dados do ENEM 2023, armazenando-os em um banco de dados PostgreSQL e respondendo a perguntas relevantes sobre o desempenho dos candidatos.
+
+---
+
+##  Documentação Técnica - Projeto ENEM 2023
+
+### Banco de Dados
+- **Sistema Gerenciador:** PostgreSQL  
+- **Nome do banco de dados:** `enem2023`
+
+### Tabelas Utilizadas
+
+| Tipo      | Nome da Tabela        | Descrição                                                       |
+|-----------|------------------------|------------------------------------------------------------------|
+| Fato      | `fato_enem`            | Tabela principal com dados dos candidatos e suas notas          |
+| Dimensão  | `dim_sexo`             | Mapeamento de códigos para os gêneros (masculino/feminino)      |
+| Dimensão  | `dim_escola`           | Tipos de escola: pública, privada ou exterior                   |
+| Dimensão  | `dim_presenca_mt`      | Presença/ausência na prova de matemática                        |
+| Dimensão  | `dim_status_redacao`   | Status da redação (presente, faltou, zerada, etc.)              |
+| Dimensão  | `dim_faixa_etaria`     | Faixas etárias dos candidatos                                   |
+
+> **Observação:** As dimensões foram extraídas da própria base `dados_enem` por meio de valores únicos (`drop_duplicates()`), e cada uma recebeu uma coluna `id_` para servir como chave substituta.
+
+---
+
+##Ferramentas e Métodos de Carga
+
+### Ferramenta principal:
+- Python
+
+### Bibliotecas utilizadas:
+- `pandas` – Manipulação e transformação dos dados  
+- `sqlalchemy` – Conexão com o PostgreSQL  
+- `psycopg2` – Driver para comunicação com PostgreSQL  
+- `python-dotenv` – Gerenciamento seguro de variáveis de ambiente  
+
+---
+
+## Uso de Variáveis de Ambiente (.env)
+
+Para proteger credenciais sensíveis, utilize um arquivo `.env` com as seguintes variáveis:
+
