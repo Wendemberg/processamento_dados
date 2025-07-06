@@ -19,5 +19,5 @@ __pycache__/
 *.csv
 
 # Docker (caso gere volumes ou dados locais)
-docker-compose.override.yaml
+docker-compose.yaml
 *.db
